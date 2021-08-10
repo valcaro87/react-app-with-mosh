@@ -7,34 +7,20 @@ class Counter extends Component {
        
     };
 
-    styles = {
-        fontSize: '50px',
-        fontWeight: 'bold'
+    renderTags() {
+        if(this.statez.tags.length === 0) return <p>There are no tags</p>
+        return( this.statez.tags.map(tag=> <li key={tag}>{ tag }</li>) )
     }
     render() { 
         
         return ( 
             <div>
-               
-                <span style={this.styles} className={this.getBadgeClasses()}> { this.formatCount() } </span>
-                <h1></h1> 
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                {this.statez.tags.length === 0 && 'no tags'}
                 <ul>
-                    {this.statez.tags.map(tag=> <li key={tag}>{ tag }</li>)}
+                    {this.renderTags()}
                 </ul>
             </div> 
         );
-    }
-
-    getBadgeClasses() {
-        let classes = "badge m-2 badge-";
-        classes += (this.statez.count === 0) ? "warning" : "primary";
-        return classes;
-    }
-
-    formatCount() {
-        const { count } = this.statez;
-        return count === 0 ? "Zero" : count;
     }
 }
  
