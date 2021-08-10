@@ -11,6 +11,17 @@ class Counter extends Component {
         fontSize: '50px',
         fontWeight: 'bold'
     }
+
+    // constructor() {
+    //     super();
+    //     //console.log('construction', this);
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
+    handleIncrement = () => {
+        console.log('increment clicked', this);
+    }
+
     render() { 
         
         return ( 
@@ -18,7 +29,14 @@ class Counter extends Component {
                
                 <span style={this.styles} className={this.getBadgeClasses()}> { this.formatCount() } </span>
                 <h1></h1> 
-                <button className="btn btn-secondary btn-sm">Increment</button>
+                <button 
+                    onClick={this.handleIncrement} 
+                    className="btn btn-secondary btn-sm"
+                >
+                    Increment
+                
+                </button>
+                
                 <ul>
                     {this.statez.tags.map(tag=> <li key={tag}>{ tag }</li>)}
                 </ul>
