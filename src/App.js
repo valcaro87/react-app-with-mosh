@@ -32,7 +32,6 @@ class App extends React.Component {
       const index = counters.indexOf(counter);
       counters[index] = { ...counter };
       counters[index].value++;
-      // console.log(counters[index]);
       this.setState({ counters });
   };
 
@@ -54,6 +53,8 @@ class App extends React.Component {
 
   render() { 
     console.log ('App rendered #order#2');
+    const total=(this.state.counters.reduce((total,currentItem) =>  total = total + currentItem.value , 0 ));
+    //console.log (total);
 
     return (
       <React.Fragment>
@@ -64,7 +65,7 @@ class App extends React.Component {
             onReset={this.handleReset} 
             onIncrement={this.handleIncrement} 
             onDelete={this.handleDelete}
-            onZZZ={this.state.zzz}
+            onZZZ={total}
           />
         </main>
       </React.Fragment>
