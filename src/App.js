@@ -14,6 +14,19 @@ class App extends React.Component {
       zzz: "0 deletions"
   };
 
+  constructor(props) {
+    super(props);
+    // console.log('App = Constructor', this.props);
+    //this.state = this.props.something;
+    console.log('App = Constructor #order#1');
+  }
+
+  componentDidMount() {
+    // ajax call
+    //this.setState({ movies })
+    console.log('App mounted #order#3');
+  }
+
   handleIncrement = (counter) => {
       const counters = [...this.state.counters];
       const index = counters.indexOf(counter);
@@ -40,6 +53,8 @@ class App extends React.Component {
   };
 
   render() { 
+    console.log ('App rendered #order#2');
+
     return (
       <React.Fragment>
         <Navbar totalCounters={this.state.counters.filter(c=> c.value >0).length}/>
