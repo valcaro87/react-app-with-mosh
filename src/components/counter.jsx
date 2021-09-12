@@ -8,6 +8,10 @@ class Counter extends Component {
             // Ajax call and get new data from the server
         }
     }
+
+    componentWillUnmount() {
+        console.log('counter unmounted');
+    }
   
     styles = {
         fontSize: '50px',

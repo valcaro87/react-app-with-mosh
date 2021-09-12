@@ -21,9 +21,6 @@ class Counters extends Component {
                         key={counter.id} 
                         onDelete={onDelete} 
                         onIncrement={onIncrement}
-                        // value={counter.value} 
-                        // id={counter.id} 
-                        // selected={true}
                         counter={counter}
                     >
                        
