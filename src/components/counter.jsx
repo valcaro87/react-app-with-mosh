@@ -15,7 +15,14 @@ class Counter extends Component {
   
     styles = {
         fontSize: '50px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        display: 'inline-block'
+    };
+
+    products = {
+        fontSize: '50px',
+        minWidth: 300,
+        display: 'inline-block'
     };
 
     render() { 
@@ -24,9 +31,10 @@ class Counter extends Component {
 
         return ( 
             <div>
-                <h4>
-                    {this.props.id}
-                </h4>
+                
+                <div style={this.products}>
+                    {this.props.counter.product_name}
+                </div>
                 
                 <span 
                     style={this.styles} 
@@ -38,7 +46,18 @@ class Counter extends Component {
                     onClick={ () => this.props.onIncrement(this.props.counter)}
                     className="btn btn-secondary btn-sm"
                 >
-                    Increment++
+                    +
+                
+                </button>
+                
+                {" "}
+
+                <button 
+                    //onClick={ () => this.handleIncrement(product)}
+                    onClick={ () => this.props.onDecrement(this.props.counter)}
+                    className="btn btn-secondary btn-sm"
+                >
+                    -
                 
                 </button>
 
