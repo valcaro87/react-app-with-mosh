@@ -30,7 +30,7 @@ class Counters extends Component {
                     </Counter> 
                 
                 ))}
-                <h1>{onZZZ}</h1>
+                <h1>Total: {onZZZ}</h1>
             </div> 
         );
     }
