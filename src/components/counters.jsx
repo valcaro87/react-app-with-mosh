@@ -27,7 +27,7 @@ class Counters extends Component {
                     </Counter> 
                 
                 ))}
-                {/* <h1>{this.props.zzz}</h1> */}
+                <h1>{this.props.onZZZ}</h1>
             </div> 
         );
     }

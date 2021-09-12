@@ -11,7 +11,7 @@ class App extends React.Component {
           { id: 3, value: 0},
           { id: 4, value: 0}
       ],
-      //zzz: "0 deletions"
+      zzz: "0 deletions"
   };
 
   handleIncrement = (counter) => {
@@ -28,7 +28,7 @@ class App extends React.Component {
       const counters = this.state.counters.filter(c => c.id !== counterID);
       const id_deleted = counterID
       this.setState({counters});
-      //this.setState({zzz: "deleted id: " + id_deleted});
+      this.setState({zzz: "deleted id: " + id_deleted});
   };
 
   handleReset = () => {
@@ -48,7 +48,9 @@ class App extends React.Component {
             counters={this.state.counters}
             onReset={this.handleReset} 
             onIncrement={this.handleIncrement} 
-            onDelete={this.handleDelete}/>
+            onDelete={this.handleDelete}
+            onZZZ={this.state.zzz}
+          />
         </main>
       </React.Fragment>
     );
